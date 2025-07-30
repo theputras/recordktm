@@ -18,7 +18,7 @@ input.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
 
            const mode = inputMode.value; // "uuid" atau "nim"
-    const maxLen = mode === "uuid" ? 8 : 12;
+    const maxLen = mode === "uuid" ? 8 : 11;
 
     const value = input.value.trim();
     if (!value) return;
