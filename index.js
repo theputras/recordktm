@@ -4,6 +4,8 @@ window.addEventListener("DOMContentLoaded", function () {
     const inputMode = document.getElementById("inputMode");
     let dataList = JSON.parse(localStorage.getItem("rfidData")) || [];
     const warning = document.getElementById("warning");
+    const checkAllCheckbox = document.getElementById("checkAll"); // Get the checkAll checkbox
+
 
     // Fokus otomatis saat halaman dibuka
     window.onload = function () {
@@ -40,6 +42,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 dataList.push(newData);
                 saveData();
                 renderTable();
+                checkAllCheckbox.checked = false; // Uncheck the "check all" checkbox
                 // Tampilkan warning sukses
                 alertBox("✅ Data berhasil disimpan!", "success");
             }
@@ -113,6 +116,8 @@ window.addEventListener("DOMContentLoaded", function () {
     // Render data ke tabel
     function renderTable() {
         table.innerHTML = "";
+        // Uncheck the "check all" checkbox when the table is re-rendered due to data changes
+        checkAllCheckbox.checked = false; // Uncheck the "check all" checkbox
         dataList.forEach((item, index) => {
             const row = table.insertRow();
 
