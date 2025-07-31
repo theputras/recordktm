@@ -48,7 +48,7 @@
         id="inputMode"
         class="border border-gray-300 rounded px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
       >
-        <option value="uuid">UUID</option>
+        <option value="uuid">UUID (Tapping KTM)</option>
         <option value="nim">NIM</option>
       </select>
     </div>
@@ -79,19 +79,26 @@
       >
         Hapus Semua Data
       </button>
+      <button
+  onclick="deleteSelectedRows()"
+  class="bg-yellow-500 text-white px-6 py-2 rounded hover:bg-yellow-600 transition"
+>
+  Hapus Terpilih
+</button> 
     </div>
 
     <!-- Tabel -->
     <div class="overflow-x-auto max-h-[315px]">
       <table class="w-full border border-gray-300 text-sm text-center bg-white shadow rounded">
         <thead class="bg-blue-100 text-gray-700">
-          <tr>
-            <th class="p-2 border">No</th>
-            <th class="p-2 border">UUID</th>
-            <th class="p-2 border">NIM</th>
-            <th class="p-2 border">Waktu</th>
-            <th class="p-2 border">Aksi</th>
-          </tr>
+  <tr>
+    <th><input type="checkbox" id="checkAll" /></th> <!-- Master checkbox -->
+    <th class="p-2 border">No</th>
+    <th class="p-2 border">UUID</th>
+    <th class="p-2 border">NIM</th>
+    <th class="p-2 border">Waktu</th>
+    <th class="p-2 border">Aksi</th>
+  </tr>
         </thead>
         <tbody id="uuidTable"></tbody>
       </table>
