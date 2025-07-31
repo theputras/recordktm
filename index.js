@@ -179,6 +179,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 dataList = [];
                 saveData();
                 renderTable();
+                checkAllCheckbox.checked = false; // Uncheck the "check all" checkbox
                 alertBox("✅ Semua data berhasil dihapus!", "success"); // Added alert for clear all
             } else {
                 // batal
